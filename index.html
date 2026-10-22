@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Street Rush 3D</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <canvas id="gameCanvas"></canvas>
+
+    <div class="hud">
+      <div class="topbar panel">
+        <div class="stat" id="score">SCORE 00000</div>
+        <div class="meter-wrap">
+          <div class="meter-label">SPEED</div>
+          <div class="meter"><div id="speedMeter" class="meter-fill speed"></div></div>
+        </div>
+        <div class="meter-wrap small">
+          <div class="meter-label">NITRO</div>
+          <div class="meter"><div id="nitroMeter" class="meter-fill nitro"></div></div>
+        </div>
+      </div>
+
+      <div id="messageBox" class="message panel">
+        <h1 id="messageTitle">READY</h1>
+        <p id="messageText">Press Space or tap to begin</p>
+      </div>
+
+      <div class="controls">
+        <button id="leftBtn" class="control-btn">◀</button>
+        <button id="nitroBtn" class="control-btn nitro-btn">N</button>
+        <button id="rightBtn" class="control-btn">▶</button>
+      </div>
+    </div>
+
+    <script src="./game.js"></script>
+  </body>
+</html>

@@ -1,0 +1,190 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #050b17;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+body {
+  position: relative;
+}
+
+#gameCanvas {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  background: linear-gradient(#081421, #11263e 35%, #1f1a1d 100%);
+}
+
+.hud {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+.panel {
+  background: rgba(13, 20, 30, 0.36);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.topbar {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  right: 18px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 12px 16px;
+}
+
+.stat {
+  min-width: 170px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+.meter-wrap {
+  flex: 1;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.meter-wrap.small {
+  max-width: 220px;
+}
+
+.meter-label {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  opacity: 0.82;
+  text-transform: uppercase;
+}
+
+.meter {
+  height: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.meter-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: inherit;
+  transition: width 0.12s ease-out;
+}
+
+.meter-fill.speed {
+  background: linear-gradient(90deg, #34d399, #84cc16, #facc15);
+}
+
+.meter-fill.nitro {
+  background: linear-gradient(90deg, #60a5fa, #38bdf8, #22d3ee);
+}
+
+.message {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px 28px;
+  text-align: center;
+  display: none;
+}
+
+.message h1 {
+  margin: 0 0 8px;
+  letter-spacing: 0.16em;
+  font-size: 26px;
+}
+
+.message p {
+  margin: 0;
+  letter-spacing: 0.12em;
+  font-size: 12px;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.controls {
+  position: absolute;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  pointer-events: auto;
+}
+
+.control-btn {
+  width: 72px;
+  height: 72px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  background: rgba(13, 18, 28, 0.65);
+  color: white;
+  font-size: 28px;
+  font-weight: 700;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.22);
+}
+
+.control-btn:active {
+  transform: scale(0.97);
+}
+
+.nitro-btn {
+  width: 90px;
+  height: 90px;
+  background: linear-gradient(180deg, #3b82f6, #1d4ed8);
+}
+
+@media (max-width: 720px) {
+  .topbar {
+    gap: 10px;
+    padding: 10px 12px;
+  }
+
+  .stat {
+    min-width: 120px;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+  }
+
+  .meter-wrap {
+    max-width: 220px;
+  }
+
+  .meter-wrap.small {
+    max-width: 150px;
+  }
+
+  .control-btn {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+  }
+
+  .nitro-btn {
+    width: 74px;
+    height: 74px;
+  }
+}
